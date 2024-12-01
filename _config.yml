@@ -1,0 +1,29 @@
+title: Son Dos Clicks!
+description: Where everything is 'just two clicks away'
+baseurl: "/sondos.click"  # the subpath of your site, e.g. /blog
+url: "https://YOUR-USERNAME.github.io"  # Replace YOUR-USERNAME with your GitHub username
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Default layout for all pages
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git/
+  - .github/
+  - README.md

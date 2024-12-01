@@ -1,0 +1,50 @@
+---
+layout: default
+title: SonDos GIFs
+---
+
+<h1>🎬 {{ page.title }}</h1>
+
+<div class="gif-gallery">
+    <div class="gif-item">
+        <h3>When the code works on the first try</h3>
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGltZDFwYjh3c3V1eXg4NjBoZGtuOHZjcTZ5aW03dDRqOWxjazE1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UTm86phGUMMQE/giphy.gif" alt="Success GIF" loading="lazy">
+    </div>
+
+    <div class="gif-item">
+        <h3>Debugging in Production</h3>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjQ0YzFkNzE4ZWM4NzBiZDRlZDM0ZWJiNzM4ZTY5ZTM5ZWZhNzU0YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/QMHoU66sBXqqLqYvGO/giphy.gif" alt="Debugging GIF" loading="lazy">
+    </div>
+
+    <div class="gif-item">
+        <h3>When someone asks about my code documentation</h3>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjM5YzIyZWZjNzFjNzM0ZWNhNjc0ZWJjNzM4ZTY5ZTM5ZWZhNzU0YiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/bPCwGUF2sKjyE/giphy.gif" alt="Documentation GIF" loading="lazy">
+    </div>
+</div>
+
+<style>
+.gif-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.gif-item {
+    background: var(--sidebar-bg);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gif-item img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.gif-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+</style>

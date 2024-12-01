@@ -1,0 +1,80 @@
+---
+layout: default
+---
+<article class="post">
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.categories %}
+        <span class="categories">
+            Categories: 
+            {% for category in page.categories %}
+            <span class="category">{{ category }}</span>
+            {% endfor %}
+        </span>
+        {% endif %}
+    </div>
+    <div class="post-content">
+        {{ content }}
+    </div>
+</article>
+
+<style>
+.post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.post-meta {
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.post-meta time {
+    margin-right: 1rem;
+}
+
+.category {
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin: 0 0.2rem;
+}
+
+.post-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.post-content p {
+    margin: 1.5rem 0;
+}
+
+.post-content img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.post-content code {
+    background: var(--sidebar-bg);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+.post-content pre code {
+    display: block;
+    padding: 1rem;
+    overflow-x: auto;
+    line-height: 1.5;
+}
+</style>

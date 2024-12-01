@@ -1,0 +1,243 @@
+---
+layout: default
+title: Easy DosClick Project Generator
+---
+
+<div class="project-generator-content">
+  <h1>Easy DosClick Project Generator for Stakeholders 🚀</h1>
+  <p class="subtitle">Just one click for you!</p>
+
+  <div class="button-container">
+    <button class="modern-button" tabindex="-1">
+      <span class="button-text">Easy DosClick Project</span>
+      <span class="button-icon">🚀</span>
+    </button>
+    <div id="message-container" class="message-container"></div>
+  </div>
+</div>
+
+<style>
+  .project-generator-content {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .subtitle {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .button-container {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .modern-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 30px;
+    background: linear-gradient(
+      135deg,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .modern-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      var(--secondary-color),
+      var(--primary-color)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .modern-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .modern-button:hover::before {
+    opacity: 1;
+  }
+
+  .modern-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .button-text,
+  .button-icon {
+    position: relative;
+    z-index: 1;
+  }
+
+  .button-icon {
+    font-size: 1.4rem;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  .message-container {
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .message-container.show {
+    opacity: 1;
+  }
+
+  @keyframes messageAppear {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+    5% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    95% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-20px);
+    }
+  }
+
+  .message-container.animate {
+    animation: messageAppear 5s ease-in-out forwards;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const button = document.querySelector(".modern-button");
+    const container = document.querySelector(".button-container");
+    const messageContainer = document.querySelector("#message-container");
+
+    let moveCount = 0;
+
+    const messages = [
+      "Come on, it's just ONE click! 🙄",
+      "Is it done already? My grandma clicks faster! 👵",
+      "Can't take this long... it's TWO clicks max! ⏰",
+      "In the time you've spent, we could have migrated to the cloud! ☁️",
+      "The powerpoint proposal said it would be quick... 🤦‍♂️",
+      "Still trying? Maybe we should outsource this click! 💸",
+      "Just imagine if this was a REAL cloud project! 😅",
+      "Two clicks! Not two thousand! 🎯",
+      "The stakeholders are getting impatient... ⌛",
+      "Have you tried turning it off and on again? 🔄",
+    ];
+
+    function showMessage() {
+      const randomMessage =
+        messages[Math.floor(Math.random() * messages.length)];
+      messageContainer.textContent = randomMessage;
+      messageContainer.classList.add("animate");
+
+      setTimeout(() => {
+        messageContainer.classList.remove("animate");
+      }, 5000);
+    }
+
+    function moveButton(e) {
+      moveCount++;
+
+      if (moveCount % 3 === 0) {
+        showMessage();
+      }
+
+      const buttonRect = button.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+
+      // Calculate button dimensions including padding
+      const buttonWidth = buttonRect.width + 20;
+      const buttonHeight = buttonRect.height + 20;
+
+      // Get mouse position relative to container
+      const mouseX = e.clientX - containerRect.left;
+      const mouseY = e.clientY - containerRect.top;
+
+      // Calculate new position within container bounds
+      let newX, newY;
+      let attempts = 0;
+      const maxAttempts = 50;
+
+      do {
+        newX = Math.random() * (containerRect.width - buttonWidth);
+        newY = Math.random() * (containerRect.height - buttonHeight);
+
+        // Ensure the new position is at least 100px away from the mouse
+        const distance = Math.sqrt(
+          Math.pow(newX - mouseX, 2) + Math.pow(newY - mouseY, 2)
+        );
+
+        attempts++;
+
+        if (distance > 100 || attempts >= maxAttempts) {
+          break;
+        }
+      } while (true);
+
+      // Apply new position with smooth transition
+      button.style.position = "absolute";
+      button.style.transition = "all 0.2s ease-out";
+      button.style.left = `${Math.max(
+        0,
+        Math.min(newX, containerRect.width - buttonWidth)
+      )}px`;
+      button.style.top = `${Math.max(
+        0,
+        Math.min(newY, containerRect.height - buttonHeight)
+      )}px`;
+    }
+
+    button.addEventListener("mouseover", moveButton);
+  });
+</script>
