@@ -1,7 +1,7 @@
 title: Son Dos Clicks!
 description: Where everything is 'just two clicks away'
-url: "https://Roque-Rivera.github.io/sondos.click" # Replace YOUR-USERNAME with your GitHub username
-
+url: "https://roque-rivera.github.io/" # Replace YOUR-USERNAME with your GitHub username
+baseurl: "/sondos.click"
 # Build settings
 markdown: kramdown
 plugins:
@@ -28,5 +28,3 @@ exclude:
 
 # Add this line to specify the repository
 repository: Roque-Rivera/sondos.click
-
-baseurl: "/sondos.click"
