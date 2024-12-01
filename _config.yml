@@ -28,3 +28,5 @@ exclude:
 
 # Add this line to specify the repository
 repository: Roque-Rivera/sondos.click
+
+baseurl: "/sondos.click"
