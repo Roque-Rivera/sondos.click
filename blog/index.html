@@ -22,7 +22,7 @@ title: Blog Posts
       {% endif %}
     </div>
     <div class="post-excerpt">{{ post.excerpt }}</div>
-    <a href="{{ post.url }}" class="read-more">Read More →</a>
+    <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More →</a>
   </article>
   {% endfor %}
 </div>
