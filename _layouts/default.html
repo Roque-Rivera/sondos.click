@@ -10,8 +10,31 @@
     {% seo %}
 </head>
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ site.baseurl }}/">Home</a></li>
+                <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
+                <li><a href="{{ site.baseurl }}/gifs">GIFs</a></li>
+                <li><a href="{{ site.baseurl }}/logos">Logos</a></li>
+                <li><a href="{{ site.baseurl }}/about">About</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        {{ content }}
+        <aside class="sidebar">
+            <h3>Sidebar Title</h3>
+            <ul>
+                <li><a href="{{ site.baseurl }}/link1">Link 1</a></li>
+                <li><a href="{{ site.baseurl }}/link2">Link 2</a></li>
+                <li><a href="{{ site.baseurl }}/link3">Link 3</a></li>
+                <!-- Add more links as needed -->
+            </ul>
+            <p>Additional content or widgets can go here.</p>
+        </aside>
+        <main>
+            {{ content }}
+        </main>
     </div>
 </body>
 </html>
