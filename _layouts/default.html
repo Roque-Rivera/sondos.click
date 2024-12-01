@@ -1,38 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
-    <script defer src="{{ site.baseurl }}/assets/js/theme.js"></script>
+    <title>{{ page.title }} - Son Dos Clicks</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <script defer src="/assets/js/theme.js"></script>
     {% feed_meta %}
     {% seo %}
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="{{ site.baseurl }}/">Home</a></li>
-                <li><a href="{{ site.baseurl }}/blog">Blog</a></li>
-                <li><a href="{{ site.baseurl }}/gifs">GIFs</a></li>
-                <li><a href="{{ site.baseurl }}/logos">Logos</a></li>
-                <li><a href="{{ site.baseurl }}/about">About</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+        </label>
+        <em>Dark Mode</em>
+    </div>
+
+    <nav class="top-nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/gifs">GIFs</a></li>
+            <li><a href="/logos">Logos</a></li>
+            <li><a href="/repos">Repos</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
         <aside class="sidebar">
-            <h3>Sidebar Title</h3>
+            <h3>Fun Tools</h3>
             <ul>
-                <li><a href="{{ site.baseurl }}/link1">Link 1</a></li>
-                <li><a href="{{ site.baseurl }}/link2">Link 2</a></li>
-                <li><a href="{{ site.baseurl }}/link3">Link 3</a></li>
-                <!-- Add more links as needed -->
+                <li><a href="https://hackertyper.com" target="_blank">HackerTyper</a></li>
+                <li><a href="/tools/project-generator">Make me a project</a></li>
+                <li><a href="/tools/title-generator">Title Generator</a></li>
             </ul>
-            <p>Additional content or widgets can go here.</p>
         </aside>
-        <main>
+
+        <main class="content">
             {{ content }}
         </main>
     </div>
