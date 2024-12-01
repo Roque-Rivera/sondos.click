@@ -1,7 +1,7 @@
 title: Son Dos Clicks!
 description: Where everything is 'just two clicks away'
-baseurl: "/sondos.click"  # the subpath of your site, e.g. /blog
-url: "https://YOUR-USERNAME.github.io"  # Replace YOUR-USERNAME with your GitHub username
+baseurl: "/sondos.click" # the subpath of your site, e.g. /blog
+url: "https://Roque-Rivera.github.io" # Replace YOUR-USERNAME with your GitHub username
 
 # Build settings
 markdown: kramdown
@@ -12,8 +12,7 @@ plugins:
 
 # Default layout for all pages
 defaults:
-  -
-    scope:
+  - scope:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
